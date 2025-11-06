@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ArtikelController;
-use App\Http\Livewire\Article\Detail;
+use App\Livewire\Article\Detail;
 use App\Http\Controllers\RiwayatDiagnosaController;
 use App\Livewire\Diagnosa;
 use App\Livewire\HasilDiagnosaComponent;
@@ -20,8 +20,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 // Artikel
 // ---------------------
 Route::get('/artikel', [ArtikelController::class, 'index'])->name('artikel.index');
-Route::get('/artikel/{id}', [ArtikelController::class, 'show'])->name('artikel.show');// ✅ Detail Artikel
-
+Route::get('/artikel/{id}', [ArtikelController::class, 'show'])->name('artikel.show');
 
 // ---------------------
 // Diagnosa (Livewire)

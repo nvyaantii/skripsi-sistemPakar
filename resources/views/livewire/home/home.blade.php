@@ -42,7 +42,7 @@
                         <p class="text-gray-600 text-sm mb-3 flex-1 line-clamp-3 leading-relaxed">
                             {{ Str::limit($artikel->deskripsi, 120) }}
                         </p>
-                        <a href="#"
+                        <a href="{{ route('artikel.show', $artikel->id) }}"
                            class="mt-auto text-green-600 hover:underline text-sm font-medium">
                            Baca Selengkapnya 
                         </a>

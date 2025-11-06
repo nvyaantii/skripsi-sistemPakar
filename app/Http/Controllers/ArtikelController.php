@@ -17,9 +17,9 @@ class ArtikelController extends Controller
     // Halaman detail artikel
     public function show($id)
     {
-        $artikel = Artikel::where('id', $id)->firstOrFail();
-        $latest  = Artikel::latest()->take(5)->get(); // sidebar
+        $artikel = Artikel::findOrFail($id);
+        $latest = Artikel::latest()->take(5)->get();
 
-        return view('livewire.article.detail', compact('artikel', 'latest'));
+        return view('livewire.article.show', compact('artikel', 'latest'));
     }
 }
