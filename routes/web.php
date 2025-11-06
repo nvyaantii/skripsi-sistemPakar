@@ -20,7 +20,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 // Artikel
 // ---------------------
 Route::get('/artikel', [ArtikelController::class, 'index'])->name('artikel.index');
-Route::get('/artikel/{slug}', [ArtikelController::class, 'show'])->name('artikel.show'); // ✅ Detail Artikel
+Route::get('/artikel/{id}', [ArtikelController::class, 'show'])->name('artikel.show');// ✅ Detail Artikel
 
 
 // ---------------------

@@ -25,7 +25,8 @@
                         <i class="bi bi-clock"></i> {{ $main->created_at->format('d M Y') }}
                     </p>
                     <p class="text-gray-700">{{ Str::limit(strip_tags($main->deskripsi), 300, '...') }}</p>
-                    <a href="{{ url('/artikel/'.$main->slug) }}" 
+                    <!-- Tombol Read More -->
+                    <a href="{{ route('artikel.show', $main->id) }}" 
                        class="inline-block mt-4 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700">
                         Read More
                     </a>
@@ -51,13 +52,13 @@
                 <h5 class="font-bold mb-4 text-lg">Latest Posts</h5>
                 @foreach($artikels->skip(1)->take(3) as $post)
                     <div class="flex items-center gap-4 mb-3">
-                        <a href="{{ url('/artikel/'.$post->slug) }}">
+                        <a href="{{ route('artikel.show', $post->id) }}">
                             <img src="{{ asset('storage/'.$post->foto) }}" 
                                  class="w-20 h-16 object-cover rounded" 
                                  alt="{{ $post->judul }}">
                         </a>
                         <div class="space-y-1">
-                            <a href="{{ url('/artikel/'.$post->slug) }}" 
+                            <a href="{{ route('artikel.show', $post->id) }}" 
                                class="text-gray-800 font-semibold block hover:text-green-600">
                                 {{ Str::limit($post->judul, 40) }}
                             </a>
